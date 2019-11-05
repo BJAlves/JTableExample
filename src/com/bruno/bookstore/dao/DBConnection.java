@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBConnection {
-	private static final String URL_MYSQL = "jdbc:mysql://localhost/books";
+	private static final String URL_MYSQL = "jdbc:mysql://localhost:3306/books?useSSL=false";
 	private static final String DRIVER_CLASS_MYSQL = "com.mysql.jdbc.Driver";
-	private static final String USER = "root";
-	private static final String PASS = "";
+	private static final String USER = "brunojalves";
+	private static final String PASS = "12345678";
 	
 	public static Connection getConnection() {
 		System.out.println("Connecting to the database");
@@ -47,11 +47,11 @@ public class DBConnection {
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
 		String sql   =	"CREATE TABLE IF NOT EXISTS books (" +
-						"ID_ bigint(20) NOT NULL AUTO_INCREMENT," +
+						"ID BIGINT(20) NOT NULL AUTO_INCREMENT," +
 						"PUBLISHING_COMPANY VARCHAR(30) NOT NULL," +
 						"TITLE VARCHAR(30) NOT NULL," +
 						"ISBN VARCHAR(50) NOT NULL," +
-						"PRIMARY_KEY ('ID')" +
+						"PRIMARY KEY (ID)" +
 						");";
 		try {
 			statement = connection.prepareStatement(sql);

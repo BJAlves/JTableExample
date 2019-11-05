@@ -11,10 +11,10 @@ import com.bruno.bookstore.entity.Book;
 
 public class BookDAO implements BookUtil {
 	
-	private static final String SQL_INSERT = "insert into BOOKS (PUBLISHING_COMPANY, TITLE, ISBN) values (?,?,?)";
-	private static final String SQL_UPDATE = "update LIVROS set EDITORA = ?, TITULO = ?, ISBN = ? where ID = ?";
-	private static final String SQL_DELETE = "delete from livros where ID = ?";
-	private static final String SQL_FIND_ALL = "select *from livros";
+	private static final String SQL_INSERT = "insert into books (publishing_company, title, isbn) values (?,?,?)";
+	private static final String SQL_UPDATE = "update books set publishing_company = ?, title = ?, isbn = ? where id = ?";
+	private static final String SQL_DELETE = "delete from books where id = ?";
+	private static final String SQL_FIND_ALL = "select *from books";
 	
 	@Override
 	public int save(Book book) {
